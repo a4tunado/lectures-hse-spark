@@ -18,3 +18,11 @@ export SPARK_HOME=/opt/spark-2.1.0-bin-hadoop2.7
 export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/build:$PYTHONPATH
 export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
 ```
+5. Проверить корректность установки можно с помощью следующего кода
+```python
+from pyspark import SparkContext
+sc = SparkContext('local', 'test app')
+a = range(10)
+a = sc.parallelize(a)
+print a.reduce(lambda x, y: x + y)
+```
