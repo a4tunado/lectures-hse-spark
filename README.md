@@ -1,15 +1,15 @@
 # Масштабируемое машинное обучение и анализ больших данных с Apache Spark
 
 ### Образ с предустановленным Apache Spark
-* Образ Virtual Box доступен для скачивания по [ссылке](https://goo.gl/PrNTSJ)
+* Образ [Virtual Box](https://www.virtualbox.org/wiki/Downloads) доступен для скачивания по [ссылке](https://goo.gl/PrNTSJ)
 * Пароль для входа в систему: 123
 
 ### Инструкция по установке Apache Spark
 1. Для работы с Apache Spark необходимо наличие следующих пакетов 
-* Java SE Development Kit https://www.java.com
-* Scala Build Tool http://www.scala-sbt.org/
-* Python 2.7 https://www.python.org/download/releases/2.7/
-* Jupiter Notebook http://jupyter.org/install.html
+ * Java SE Development Kit https://www.java.com
+ * Scala Build Tool http://www.scala-sbt.org/
+ * Python 2.7 https://www.python.org/download/releases/2.7/
+ * Jupiter Notebook http://jupyter.org/install.html
 
 2. Скачать дистрибутив Apache Spark с [официального сайта](http://spark.apache.org/downloads.html)
 
