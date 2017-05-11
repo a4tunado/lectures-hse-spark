@@ -6,17 +6,17 @@
 
 [Инструкция по установке Apache Spark](https://github.com/a4tunado/lectures-hse-spark#manual-setup)
 
-### [Инструкция по установке Docker](#docker)
+### Инструкция по установке Docker [](#docker)
 1. Установите Docker Engine на вашу локальную машину: https://docs.docker.com/engine/installation/
 2. В директории ```lectures-hse-spark/docker``` выполните команду: ```docker build .``` для создания образа
 3. Запустите контейнер: ```docker run -it -v <local path to lectures-hse-spark>:/lectures-hse-spark -p 8888:8888 <docker image id>```
 4. После запуска контейнера, перейдите в директорию ```/lectures-hse-spark``` и запустите jupyter: ```jupyter notebook --allow-root --ip 0.0.0.0```
 
-### [Образ с предустановленным Apache Spark](#virtualbox)
+### Образ с предустановленным Apache Spark [](#virtualbox)
 * Образ [Virtual Box](https://www.virtualbox.org/wiki/Downloads) доступен для скачивания по [ссылке](https://goo.gl/PrNTSJ)
 * Пароль для входа в систему: 123
 
-### [Инструкция по установке Apache Spark](#manual-setup)
+### Инструкция по установке Apache Spark [](#manual-setup)
 1. Для работы с Apache Spark необходимо наличие следующих пакетов 
   * Java SE Development Kit [https://www.java.com](https://www.java.com)
   * Scala Build Tool [http://www.scala-sbt.org](http://www.scala-sbt.org/)
