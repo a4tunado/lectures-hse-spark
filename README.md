@@ -1,10 +1,10 @@
 # Масштабируемое машинное обучение и анализ больших данных с Apache Spark
 
-[Инструкция по установке Docker](https://github.com/a4tunado/lectures-hse-spark#docker)
+[Инструкция по установке Docker](https://github.com/a4tunado/lectures-hse-spark#Инструкция-по-установке-docker-)
 
-[Образ с предустановленным Apache Spark](https://github.com/a4tunado/lectures-hse-spark#virtualbox)
+[Образ с предустановленным Apache Spark](https://github.com/a4tunado/lectures-hse-spark#Образ-с-предустановленным-apache-spark-)
 
-[Инструкция по установке Apache Spark](https://github.com/a4tunado/lectures-hse-spark#manual-setup)
+[Инструкция по установке Apache Spark](https://github.com/a4tunado/lectures-hse-spark#Инструкция-по-установке-apache-spark-)
 
 ### Инструкция по установке Docker [](#docker)
 1. Установите Docker Engine на вашу локальную машину: https://docs.docker.com/engine/installation/
