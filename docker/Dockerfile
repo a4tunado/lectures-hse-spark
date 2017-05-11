@@ -18,7 +18,7 @@ RUN curl -s $SPARK_ARCHIVE | tar -xz -C /usr/local/
 ENV SPARK_HOME /usr/local/spark-2.1.0-bin-hadoop2.7
 ENV PATH $PATH:$SPARK_HOME/bin
 
-# JUPITER
+# JUPYTER
 RUN apt-get -y install python3-setuptools && easy_install3 pip
 RUN ln -s /usr/bin/python3 /usr/bin/python 
 
