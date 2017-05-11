@@ -8,7 +8,7 @@
 
 ### Инструкция по установке Docker [](#docker)
 1. Установите Docker Engine на вашу локальную машину: https://docs.docker.com/engine/installation/
-2. В директории ```lectures-hse-spark/docker``` выполните команду: ```docker build .``` для создания образа
+2. В директории ```lectures-hse-spark/docker``` выполните команду: ```docker build -t hse-spark-dpo .``` для создания образа
 3. Запустите контейнер: ```docker run -it -v <local path to lectures-hse-spark>:/lectures-hse-spark -p 8888:8888 <docker image id>```
 4. После запуска контейнера, перейдите в директорию ```/lectures-hse-spark``` и запустите jupyter: ```jupyter notebook --allow-root --ip 0.0.0.0```
 
