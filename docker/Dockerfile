@@ -28,7 +28,8 @@ RUN pip3 install --upgrade pip \
                        mrjob \
                        tweepy \
                        numpy \
-                       sklearn
+                       sklearn \
+                       scipy
 
 # BASHRC
 RUN echo "export SPARK_HOME=/usr/local/spark-2.1.0-bin-hadoop2.7" >> /root/.bashrc
