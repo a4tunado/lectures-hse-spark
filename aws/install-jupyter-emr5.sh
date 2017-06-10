@@ -71,9 +71,9 @@ RUN_AS_STEP=false
 NOTEBOOK_DIR=""
 NOTEBOOK_DIR_S3=false
 JUPYTER_PORT=8888
-JUPYTER_PASSWORD="jupyter"
+JUPYTER_PASSWORD=""
 JUPYTER_LOCALHOST_ONLY=false
-PYTHON3=true
+PYTHON3=false
 GPU=false
 CPU_GPU="cpu"
 GPUU=""
@@ -741,7 +741,6 @@ R_SCRIPT
   fi
   #sudo ln -sf /usr/local/bin/jupyter-toree /usr/bin/
   export SPARK_HOME="/usr/lib/spark"
-  export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
   SPARK_PACKAGES="com.databricks:spark-csv_2.11:1.5.0,com.databricks:spark-avro_2.11:3.2.0,org.elasticsearch:elasticsearch-spark_2.11:2.4.4"
   if [ "$USER_SPARK_OPTS" = "" ]; then
     SPARK_OPTS="--packages $SPARK_PACKAGES"
@@ -799,7 +798,6 @@ R_SCRIPT
         export PYSPARK_DRIVER_PYTHON="jupyter"
         export PYSPARK_DRIVER_PYTHON_OPTS="notebook --no-browser $SSL_OPTS_JUPYTER --log-level=INFO"
         export NOTEBOOK_DIR="$NOTEBOOK_DIR"
-        export PYTHONPATH="$PYTHONPATH"
         pyspark
 BASH_SCRIPT
         ',
@@ -851,7 +849,7 @@ else
           stop_on        => 'runlevel [016]',
           console        => 'output',
           chdir          => '/home/hadoop',
-          env            => { 'PYTHONPATH' => '$PYTHONPATH', 'NOTEBOOK_DIR' => '$NOTEBOOK_DIR', 'NODE_PATH' => '$NODE_PATH' },
+          env            => { 'NOTEBOOK_DIR' => '$NOTEBOOK_DIR', 'NODE_PATH' => '$NODE_PATH' },
           exec           => 'sudo su - hadoop -c "jupyter notebook --no-browser $SSL_OPTS_JUPYTER" > /var/log/jupyter/jupyter.log 2>&1',
       }
 PUPPET_SCRIPT
@@ -885,7 +883,7 @@ if [ "$JUPYTER_HUB" = true ]; then
       stop_on        => 'runlevel [016]',
       console        => 'output',
       chdir          => '/mnt/jupyterhub',
-      env            => { 'PYTHONPATH' => '$PYTHONPATH', 'NOTEBOOK_DIR' => '$NOTEBOOK_DIR', 'NODE_PATH' => '$NODE_PATH' },
+      env            => { 'NOTEBOOK_DIR' => '$NOTEBOOK_DIR', 'NODE_PATH' => '$NODE_PATH' },
       exec           => 'sudo /usr/bin/jupyterhub --pid-file=/var/run/jupyter.pid $SSL_OPTS_JUPYTERHUB --port=$JUPYTER_HUB_PORT --ip=$JUPYTER_HUB_IP --log-file=/var/log/jupyter/jupyterhub.log --config /home/hadoop/.jupyter/jupyter_notebook_config.py'
   }
 PUPPET_SCRIPT
