@@ -36,5 +36,5 @@ from pyspark import SparkContext
 sc = SparkContext('local', 'test app')
 a = range(10)
 a = sc.parallelize(a)
-print a.reduce(lambda x, y: x + y)
+print(a.reduce(lambda x, y: x + y))
 ```
