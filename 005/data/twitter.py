@@ -47,6 +47,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     s = socket.socket()              # Create a socket object
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     s.bind((args.host, args.port))   # Bind to the port
 
     print('Listening on: %s:%s' % (args.host, args.port))
