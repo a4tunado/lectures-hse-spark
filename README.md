@@ -7,10 +7,11 @@
 [Инструкция по установке Apache Spark](https://github.com/a4tunado/lectures-hse-spark#Инструкция-по-установке-apache-spark-)
 
 ### Инструкция по установке Docker [](#docker)
-1. Установите Docker Engine на вашу локальную машину: https://docs.docker.com/engine/installation/
-2. Скачайте собранный образ по ссылке: https://goo.gl/38yKZZ, либо в директории ```lectures-hse-spark/docker``` выполните команду: ```docker build -t hse-spark-dpo .``` для создания образа самостоятельно
-3. Запустите контейнер: ```docker run -it -v $(pwd):/lectures-hse-spark -p 8888:8888 <docker image id>```. Чтобы узнать ```<image id>``` выполните команду ```docker images```
-4. После запуска контейнера, перейдите в директорию ```/lectures-hse-spark``` и запустите jupyter: ```jupyter notebook --allow-root --ip 0.0.0.0```
+1. Установите Docker Engine на вашу локальную машину: [https://docs.docker.com](https://docs.docker.com/engine/installation/), для [windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
+2. Для сборки докер-образа склонируйте репозиторий и выполните команду: ```docker build --no-cache --rm --tag spark - < ./docker/Dockerfile```
+3. После завершения работы команды в списке докер-образов должен появится образ с именем ```spark:latest```. Для получения списка образов выполните команду ```docker images```
+4. Запустите контейнер, выполнив команду ```docker run -p 8888:8888 -it spark```
+5. В случае успешного выполнения операций в браузере по адресу http://127.0.0.1:8888 должен быть доступен ноутбук с примерами к занятиям
 
 ### Образ с предустановленным Apache Spark [](#virtualbox)
 * Образ [Virtual Box](https://www.virtualbox.org/wiki/Downloads) доступен для скачивания по [ссылке](https://goo.gl/PrNTSJ)
