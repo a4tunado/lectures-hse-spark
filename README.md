@@ -8,14 +8,12 @@
 
 ### Инструкция по установке Docker [](#docker)
 1. Установите Docker Engine на вашу локальную машину: [https://docs.docker.com](https://docs.docker.com/engine/installation/), для [windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
-2. Для сборки докер-образа склонируйте репозиторий и выполните команду: ```docker build --no-cache --rm --tag spark - < ./docker/Dockerfile```
-3. После завершения работы команды в списке докер-образов должен появится образ с именем ```spark:latest```. Для получения списка образов выполните команду ```docker images```
+2. Вы можете скачать и станровить готовый образ (i), либо собрать докер-образ самостоятельно (ii). 
+    1. Скачайте собранный образ по [ссылке](https://drive.google.com/file/d/1oMY8JFQC2ahxSU3nc60MEI8e_nSAjhsT/view?usp=sharing) и установите его выполнив команду ```docker load -i <путь к скачанному файлу/spark-doker.tar>```
+    2. Для сборки докер-образа склонируйте репозиторий и выполните команду: ```docker build --no-cache --rm --tag spark - < ./docker/Dockerfile```
+3. После завершения установки образа в списке докер-образов должен появится образ с именем ```spark:latest```. Для получения списка образов выполните команду ```docker images```
 4. Запустите контейнер, выполнив команду ```docker run -p 8888:8888 -it spark```
 5. В случае успешного выполнения операций в браузере по адресу http://127.0.0.1:8888 должен быть доступен ноутбук с примерами к занятиям
-
-### Образ с предустановленным Apache Spark [](#virtualbox)
-* Образ [Virtual Box](https://www.virtualbox.org/wiki/Downloads) доступен для скачивания по [ссылке](https://goo.gl/PrNTSJ)
-* Пароль для входа в систему: 123
 
 ### Инструкция по установке Apache Spark [](#manual-setup)
 1. Для работы с Apache Spark необходимо наличие следующих пакетов 
